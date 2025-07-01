@@ -22,7 +22,7 @@ API RESTful construida con **NestJS** y **MongoDB**, preparada para desarrollo l
 
 ## Descripcion del proyecto
 
-Este proyecto es un API RESTful para la gestión de usuarios, desarrollada con NestJS y MongoDB. Incluye validaciones y documentación automática con Swagger. Preparada para desarrollo y despliegue mediante Docker.
+Este proyecto es un API RESTful para la gestión de usuarios, desarrollada con NestJS y MongoDB. Incluye validaciones y documentación automática con Swagger. Preparada para desarrollo y despliegue mediante Docker. Inicialmente se consume un API para obtener el listado de los usuarios pero se implementa una base de datos NoSQl donde se poblan los datos desde el API consumida y se crea un CRUD con todas las opciones de gestion para los usuarios.
 
 
 
