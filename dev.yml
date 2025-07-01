@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: users-api-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGODB_DATABASE: nest-api
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build: .
+    container_name: users-api-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: yarn start:dev
+
+volumes:
+  mongo_data:
