@@ -18,6 +18,8 @@ API RESTful construida con **NestJS** y **MongoDB**, preparada para desarrollo l
 - [Docker](https://www.docker.com/)
 - TypeScript
 - Yarn
+- Aws
+- Ubuntu server 24.04
 
 
 ## Descripcion del proyecto
@@ -40,9 +42,20 @@ cd user_api
 cp .env.example .env
 ```
 
-### 3. Levantar el entorno local con Docker
+### 3. Desplegar el proyecto entorno local con Docker
 ```bash
 docker-compose -f local.yml up --build
+```
+
+### 4. Desplegar el proyecto en ambiente de produccion
+```bash
+yarn install
+yarn global add @nestjs/cli
+yarn build
+
+
+sudo docker compose -f production.yml build
+sudo docker compose -f production.yml up
 ```
 
 ### 4. Documentación Swagger
@@ -53,7 +66,15 @@ Este proyecto cuenta con documentación automática de la API generada con **Swa
 
 Una vez corras la aplicación (localmente o con Docker), accede a:
 
+Localmente:
+```bash
 http://localhost:3000/documentation 
+```
+
+Produccion:
+```bash
+http://44.202.73.136:3000/documentation
+```
 
 Desde allí podrás:
 
@@ -67,6 +88,7 @@ Para facilitar las pruebas de esta API, puedes importar la siguiente colección 
 
 
 
-👉 [Descargar colección Postman](./dev.users.api.postman_collection.json)
+👉 [Descargar colección Postman](./users_api.postman_collection.json)
 
-Una vez importada, asegúrate de ajustar el entorno base (por ejemplo, `http://localhost:3000`).
+En dicha colección se encuentra las peticiones para los dos ambientes (local, produccion) con las que se pueden realizar pruebas del ApiRest.
+

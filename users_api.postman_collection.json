@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Get users  with filters",
+			"name": "Local - Get users  with filters",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -104,7 +104,7 @@
 			"response": []
 		},
 		{
-			"name": "Get all users",
+			"name": "Local - Get all users",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -133,7 +133,7 @@
 			"response": []
 		},
 		{
-			"name": "Create users",
+			"name": "Local - Create users",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -170,7 +170,7 @@
 			"response": []
 		},
 		{
-			"name": "Get one user",
+			"name": "Local - Get one user",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -194,7 +194,7 @@
 			"response": []
 		},
 		{
-			"name": "Update partial user",
+			"name": "Local - Update partial user",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -226,7 +226,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete user",
+			"name": "Local - Delete user",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -242,6 +242,217 @@
 					"protocol": "http",
 					"host": [
 						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"6863e0768aaebf64c02fb4ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod - Get users with filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://44.202.73.136:3000/api/users/search?sortBy=name",
+					"protocol": "http",
+					"host": [
+						"44",
+						"202",
+						"73",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod - Get all users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://44.202.73.136:3000/api/users/",
+					"protocol": "http",
+					"host": [
+						"44",
+						"202",
+						"73",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod - Create users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jimmy Martinez\",\n    \"username\": \"Bret\",\n    \"email\": \"jimmy@april.biza\",\n    \"address\": {\n        \"city\": \"Gwenborough\"\n    },\n    \"company\": {\n        \"name\": \"Romaguera-Crona\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://44.202.73.136:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"44",
+						"202",
+						"73",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod - Get one user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"jimmy Dayan \"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://44.202.73.136:3000/api/6863e0768aaebf64c02fb4ca",
+					"protocol": "http",
+					"host": [
+						"44",
+						"202",
+						"73",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"6863e0768aaebf64c02fb4ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod - Update partial user",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"jimmy Dayan \"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://44.202.73.136:3000/api/6863e0768aaebf64c02fb4ca",
+					"protocol": "http",
+					"host": [
+						"44",
+						"202",
+						"73",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"6863e0768aaebf64c02fb4ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod - Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"jimmy Dayan \"\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://44.202.73.136:3000/api/users/6863e0768aaebf64c02fb4ca",
+					"protocol": "http",
+					"host": [
+						"44",
+						"202",
+						"73",
+						"136"
 					],
 					"port": "3000",
 					"path": [
